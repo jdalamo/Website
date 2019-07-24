@@ -129,3 +129,5 @@ VALUES
 INSERT INTO Videos
 VALUES
 (20, 'Woodlawn Dam', 'San Antonio', 'Texas', 'US', '2019-07-20', 'https://www.youtube.com/embed/6VuYVQMjAQc?modestbranding=1&loop=1&playlist=6VuYVQMjAQc', false, 1);
+
+COMMIT;

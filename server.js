@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 const hbs = require('express-handlebars');
-const http = require('http');
 const bodyParser = require('body-parser');
 const mySql = require('mysql');
 
