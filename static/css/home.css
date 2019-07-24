@@ -64,6 +64,9 @@ a {
         grid-template-rows: 200px 80px 80px 80px 1fr;
         grid-gap: 20px;
     }
+    .content {
+        font-size: 50px;
+    }
     .myName {
         font-size: 100px;
     }
