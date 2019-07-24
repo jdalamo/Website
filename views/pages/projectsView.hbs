@@ -42,7 +42,7 @@
             multiple devices--that is, when I remember to upload them.  The first iteration of this project was my wanting something I
             could schedule to run every few minutes to upload anything I had forgotten about to Google.  In my head it would work 
             like this: I'd give it both the path of the directory on my machine that I want synced with Google Drive, as well as the folder
-            ID of the Google Drive folder with whicg I want it to be synced.  Then each time it runs, it looks at both, determines what's different,
+            ID of the Google Drive folder with which I want it to be synced.  Then each time it runs, it looks at both, determines what's different,
             and syncs the two folders.  The hardest part of this project was developing the algorithm that recursively looks through the Google
             Drive file system.  I was expecting Google Drive to be structured similarly to a normal file system, but it's not.  Google Drive
             uses IDs, not filepaths.  Every folder and file has an ID and stores the ID of its parent as well.  To traverse the file structure,
