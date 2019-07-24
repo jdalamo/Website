@@ -7,7 +7,7 @@ body {
 
 .topNav {
     position: fixed;
-    z-index: 10; /*fix for media page--nav bar underneath videos*/
+    z-index: 1; /*fix for media page--nav bar underneath videos*/
     background-color: #474e59;
     width: 100%;
     overflow: hidden;

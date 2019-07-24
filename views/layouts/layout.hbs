@@ -9,11 +9,11 @@
     
     <body>
         <div class="topNav" id="topNavBar">
-            <a href="https://jdalamo.com/" class="navLink">JD</a>
-            <a href="https://jdalamo.com/media" class="navLink">Media</a>
-            <a href="https://jdalamo.com/projects" class="navLink">Projects</a>
-            <a href="https://jdalamo.com/blog" class="navLink">Blog</a>
-            <a href="https://jdalamo.com/contact" class="navLink">Contact</a>
+            <a href="http://localhost:3000/" class="navLink">JD</a>
+            <a href="http://localhost:3000/media" class="navLink">Media</a>
+            <a href="http://localhost:3000/projects" class="navLink">Projects</a>
+            <a href="http://localhost:3000/blog" class="navLink">Blog</a>
+            <a href="http://localhost:3000/contact" class="navLink">Contact</a>
             <a href="javascript:void(0);" class="icon" onclick="expandMenu()">
                 <i class="fas fa-bars"></i>
             </a>
@@ -28,6 +28,7 @@
             } else {
                 navBar.className = "topNav";
             }
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
         }
     </script>
 </html>

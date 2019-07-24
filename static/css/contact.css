@@ -12,3 +12,10 @@ body {
     grid-column: 2 / 3;
     color: white;
 }
+
+@media screen and (max-width: 1000px) {
+    .grid {
+        padding-top: 170px;
+        font-size: 50px;
+    }
+}
