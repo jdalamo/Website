@@ -8,12 +8,12 @@
             to build it was learning these technologies, which is the reason I chose Node.js for my backend instead
             of a Python framework like Django or Flask, which would've been more comfortable for me.  This was also my
             first time using Git, which comes with its own learning curve.  The first step in this project was figuring
-            out whether or not I needed a frontend framework for my site.  I had heard about things like React,
+            out whether or not I needed a front-end framework for my site.  I had heard about things like React,
             Angular, and Vue, but I didn't really understand the use case for them.  At first I
-            thought I needed one if I wanted my website to have any dynamic elements on it, and decided to use React as it is
-            more lightweight than Angular and doesn't use TypeScript.  I quickly realized, however, that a frontend framework
+            thought I needed one if I wanted my website to have any dynamic elements, and decided to use React as it is
+            more lightweight than Angular and doesn't use TypeScript.  I quickly realized, however, that a front-end framework
             was extreme overkill for my needs.  These frameworks are designed with single-page
-            web apps in mind, not mostly-static personal websites with limited user interaction.  This was a relief for me,
+            web apps in mind, not for mostly-static personal websites with limited user interaction.  This was a relief for me,
             as it made my job much simpler.  The next hurdle I came across was figuring out what a templating engine was--all
             the tutorials I read about starting a website with Node.js and Express used a different one (Pug, EJS, Mustache,
             Handlebars, etc.).  After some digging though I realized the advantages of using one, namely reducing duplicate 
@@ -39,15 +39,15 @@
         <h1 class="title"><u>Google Drive CLI (Incomplete)</u></h1>
         <p>
             I primarily use Google Drive to save all of my school work, as it makes it easy to access all my files from anywhere, across
-            multiple devices--that is, when I remember to upload them.  The first iteration of this project was me wanting something I
+            multiple devices--that is, when I remember to upload them.  The first iteration of this project was my wanting something I
             could schedule to run every few minutes to upload anything I had forgotten about to Google.  In my head it would work 
             like this: I'd give it both the path of the directory on my machine that I want synced with Google Drive, as well as the folder
-            ID of the Google Drive folder I want it to be synced with.  Then each time it runs, it looks at both, determines what's different,
+            ID of the Google Drive folder with whicg I want it to be synced.  Then each time it runs, it looks at both, determines what's different,
             and syncs the two folders.  The hardest part of this project was developing the algorithm that recursively looks through the Google
             Drive file system.  I was expecting Google Drive to be structured similarly to a normal file system, but it's not.  Google Drive
             uses IDs, not filepaths.  Every folder and file has an ID and stores the ID of its parent as well.  To traverse the file structure,
-            I had to write an algorithm that takes a starting parent ID that represents the folder to be synced (provided by the user), and then
-            iterates through all the children.  Each child is analyzed and if it is another folder, it is added to a list of folders which are
+            I had to write an algorithm that takes a starting parent ID representing the folder to be synced (provided by the user), and then
+            iterates through all the children.  Each child is analyzed and if it is another folder it is added to a list of folders, which are
             then subsequently iterated through.  To help me design this algorithm I looked into the source code for the os.walk() function within
             Python's os module.  Once I had the algorithm working, it was simple enough to modify it to work on a traditional file structure as well.
             Once it was working for both platforms, all that was left to do was compare the results of both runs, and either upload or download the
@@ -56,7 +56,7 @@
         <p>
             After this proof of concept, I started to think about adding flexibility.  What is the final form of a project like this?
             The logical answer to this question, it seemed to me, was to create a Google Drive command-line interface, which is what
-            I'm currently working on.  The github repository will be made public soon and when it is it will be linked.  
+            I'm currently working on.  The GitHub repository will be made public soon and when it is, it will be linked.  
         </p>
     </div>
 </div>
