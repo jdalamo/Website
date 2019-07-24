@@ -1,0 +1,63 @@
+ <link rel="stylesheet" type="text/css" href="/css/projects.css" />
+
+<div class="content_grid">
+    <div class="content">
+        <h1 class="title"><a href="https://github.com/jdalamo/website" target="_blank"><u>This website (Ongoing: V1.0)</u></a></h1>
+        <p>
+            Before building this website I had no experience in JavaScript, HTML, or CSS.  Part of my motivation
+            to build it was learning these technologies, which is the reason I chose Node.js for my backend instead
+            of a Python framework like Django or Flask, which would've been more comfortable for me.  This was also my
+            first time using Git, which comes with its own learning curve.  The first step in this project was figuring
+            out whether or not I needed a frontend framework for my site.  I had heard about things like React,
+            Angular, and Vue, but I didn't really understand the use case for them.  At first I
+            thought I needed one if I wanted my website to have any dynamic elements on it, and decided to use React as it is
+            more lightweight than Angular and doesn't use TypeScript.  I quickly realized, however, that a frontend framework
+            was extreme overkill for my needs.  These frameworks are designed with single-page
+            web apps in mind, not mostly-static personal websites with limited user interaction.  This was a relief for me,
+            as it made my job much simpler.  The next hurdle I came across was figuring out what a templating engine was--all
+            the tutorials I read about starting a website with Node.js and Express used a different one (Pug, EJS, Mustache,
+            Handlebars, etc.).  After some digging though I realized the advantages of using one, namely reducing duplicate 
+            code and being able to render the HTML dynamically.  I settled on using Handlebars because I wanted to stick as 
+            closely to vanilla HTML as possible, while still taking advantage of the aforementioned benefits.  
+        </p>
+        <p>
+            As I mentioned earlier, before building this website I had no experience with CSS.  It was already a murky concept
+            for me, and adding to my confusion was the fact that CSS frameworks are implemented with HTML classes--meaning you
+            don't see the CSS at all.  I watched a tutorial on how to use Twitter's framework, Bootstrap, but wasn't happy with
+            what it had to offer.  Then I stumbled upon a YouTube video on
+            <span><a href="https://youtu.be/txZq7Laz7_4" target="_blank">CSS Grid</a></span> and immediately liked what it had to
+            offer.  Once I discovered it I ditched Bootstrap and started working.  It took a little while to get comfortable with
+            designing the grid layout and placing elements on it, but after somne trial and error I got the home page looking how
+            I wanted.  Then I moved on to designing the video page.  This is an example of a use case where CSS Grid really shines.
+            As is evident by the name, the technology is best suited to content that naturally fits a grid.  In about 30 lines of
+            CSS I managed to create a layout that auto-resizes based on browser width (with each video also auto-resizing), has
+            rounded corners, padding, and a built-in algorithm for placing the videos within the grid to minimize empty space.
+        </p>
+
+        <hr>
+
+        <h1 class="title"><a href="https://github.com/jdalamo/Google-Drive-CLI" target="_blank"><u>Google Drive CLI (Incomplete)</u></a></h1>
+        <p>
+            I primarily use Google Drive to save all of my school work, as it makes it easy to access all my files from anywhere, across
+            multiple devices--that is, when I remember to upload them.  The first iteration of this project was me wanting something I
+            could schedule to run every few minutes to and upload anything I had forgotten about to Google.  In my head it would work 
+            ike this: I'd give it both the path of the directory on my machine that I want synced with Google Drive, as well as the folder
+            ID of the Google Drive folder I want it to be synced with.  Then each time it runs, it looks at both, determines what's different,
+            and syncs the two folders.  The hardest part of this project was developing the algorithm that recursively looks through the Google
+            Drive file system.  I was expecting Google Drive to be structured similary to a normal file system, but it's not.  Google Drive
+            uses IDs, not filepaths.  Every folder and file has an ID and stores the ID of its parent as well.  To traverse the file structure,
+            I had to write an algorithm that takes a starting parent ID that represents the folder to be synced (provided by the user), and then
+            iterates through all the children.  Each child is analyzed and if it is another folder, it is added to a list of folders which are
+            then subsequently iterated through.  To help me design this algorithm I looked into the source code for the os.walk() function within
+            Python's os module.  Once I had the algorithm working, it was simple enough to modify it to work on a traditional file structure as well.
+            Once it was working for both platforms, all that was left to do was compare the results of both runs, and either upload or download the
+            dissimilar files.
+        </p>
+        <p>
+            After this proof of concept, I started to think about adding flexibility.  What is the final form of a project like this?
+            I determined that what I was really creating was a command line interface for working with Google Drive.  I don't know that
+            there is much demand for such a product, but I hadn't heard of anything like it and was sufficiently interested to pursue it
+            further.  
+        </p>
+    </div>
+</div>

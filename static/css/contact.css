@@ -1,0 +1,14 @@
+body {
+    background: black;
+}
+
+.grid {
+    display: grid;
+    padding-top: 76px;
+    grid-template-columns: 80px 1fr 80px;
+}
+
+.content {
+    grid-column: 2 / 3;
+    color: white;
+}

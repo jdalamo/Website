@@ -1,0 +1,74 @@
+.image_grid {
+    background-image: url('/images/background.jpg');
+    background-size: cover;
+    background-position: center top;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: 136px 80px 80px 80px 1fr;
+    grid-template-areas: 
+    ". ."
+    ". f"
+    ". l"
+    ". s"
+    ". .";
+}
+
+#firstName {
+    padding-left: 7px;
+    grid-area: f;
+    align-self: center;
+}
+
+#lastName {
+    grid-area: l;
+    align-self: center;
+}
+
+.myName {
+    color: white;
+    font-size: 60px;
+}
+
+#sm_links {
+    padding-left: 3px;
+    grid-area: s;
+    list-style-type: none;
+}
+#sm_links li {
+    padding-right: 5px;
+    display: inline;
+}
+
+.content_grid {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    background: black;
+}
+
+.content {
+    color: white;
+    grid-column: 2 / 3;
+}
+
+a {
+    color: white;
+}
+
+#talking {
+    font-style: italic;
+}
+
+@media screen and (max-width: 1000px) {
+    .image_grid {
+        grid-template-rows: 200px 80px 80px 80px 1fr;
+        grid-gap: 20px;
+    }
+    .myName {
+        font-size: 100px;
+    }
+    #sm_links i {
+        font-size: 100px;
+    }
+
+}

@@ -1,0 +1,99 @@
+Notes:
+https://www.w3schools.com/html/html_youtube.asp
+WEBSITE STUFF:
+    - nav bar vertical height: 76px
+    - iframe help:
+        - https://jameshfisher.com/2017/08/30/how-do-i-make-a-full-width-iframe/
+
+HANDLEBARS STUFF:
+    - use two curly braces to escape HTML and insert text, use three to insert block content
+    - unlike pug, in handlebars we don't need to extend our default layout for each new page
+        - handlebars just takes what's in the file and inserts it where it sees {{{ body }}}
+    - handlebars allows writing helpers in the files, which are like functions
+    - with double curly braces, you can't have a block of code--only 1 line!
+        - to get a code block, do: {{# }}
+
+CSS STUFF:
+    - with css, to target an id use #id, to target a class use .class
+        - can use both together to target more specific elements
+    - can apply the same rules to multiple elements by separating them with commas
+    - css doesn't have to be in its own file
+        - it can be within a <style> tag in the <head> tag, or it can be in-line
+
+
+
+DB STUFF:
+    - https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server
+        - have to run that after installing mysql or error will occur
+    - path to source:
+        - macOs: /Users/jd/Desktop/website/website_db_ddl.sql
+        - ubuntu: /home/jd/Desktop/website/website_db_ddl.sql
+        - server: /home/ubuntu/website/website_db_ddl.sql
+
+
+hard-coded video grid:
+
+<video class="favorite" muted loop controls src="/video/witte.mp4"></video>
+<video muted loop controls src="/video/bridge_side.mp4"></video>
+<video muted loop controls src="/video/ducks.mp4"></video>
+<video class="favorite" muted loop controls src="/video/greenbelt_skyline.mp4"></video>
+<video muted loop controls src="/video/flood_control_desc.mp4"></video>
+<video muted loop controls src="/video/flood_control_pan.mp4"></video>
+<video muted loop controls src="/video/bridge_through.mp4"></video>
+<video class="favorite" muted loop controls src="/video/railroad.mp4"></video>
+
+<video muted loop controls src={{ this.filepath }}></video>
+<video class="favorite" muted loop controls src={{ this.filepath }}></video>
+
+{{# each videos }}
+            {{# if this.favorite }}
+                <video class="favorite" muted loop controls src={{ this.filepath }}></video>
+            {{ else }}
+                <video muted loop controls src={{ this.filepath }}></video>
+            {{/if}}
+        {{/each}}
+
+function makeActive() {
+            var linkDiv = document.getElementById("topNavBar");
+            var links = linkDiv.getElementsByClassName("navLink");
+
+            for (var i = 0; i < links.length; i++) {
+                links[i].addEventListener("click", function() {
+                    var active = document.getElementsByClassName("active");
+                    active[0].className = active[0].className.replace(" active", "");
+                    this.className += " active";
+                });
+            }
+        }
+
+
+
+function makeActive() {
+            // Add active class to the current button (highlight it)
+            var linkDiv = document.getElementById("topNavBar");
+            var links = linkDiv.getElementsByClassName("navLink");
+            alert(links[0]);
+            /*
+            for (var i = 0; i < links.length; i++) {
+                links[i].classList.remove(" active");
+            }
+            this.classList.add(" active")*/
+        }
+
+<video class="favorite" muted loop controls src={{ this.videoLink }}></video>
+
+{{# each videos }}
+            {{# if this.favorite }}
+                <div class="vidContainer favorite">
+                    <iframe class="favorite" src={{ this.link }}></iframe>
+                </div>
+            {{ else }}
+                <div class="vidContainer">
+                    <iframe src={{ this.link }}></iframe>
+                </div>
+            {{/if}}
+    {{/each}}
+
+<iframe allowfullscreen="allowfullscreen"
+        src="https://www.youtube.com/embed/d4cnCwjklO8?loop=1">
+        </iframe>

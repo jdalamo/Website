@@ -1,0 +1,15 @@
+to do:
+    - in nav bar, get active tab and highlight it
+    - reset album view counts
+    - possibly move to vimeo to get rid of youtube title and stuff
+    - in writing: use "responsive, mobile-first" design language
+    - good tips here (https://www.youtube.com/watch?v=F4G2i4eS7x0)
+    - look up whether to use app.get or express.Router to handle routing
+    - look into seige for stress testing website if I use mySQL database
+    - edit website write-up
+        - fact check statements about React
+        - used "quickly" a lot
+    - clean up app.use and app.set statements
+    - create sequences for primary keys in database
+    - look for redundant css and html
+    - once i have a lot of albums, generate the select HTML dynamically with db and handlebars

@@ -1,0 +1,38 @@
+ <link rel="stylesheet" type="text/css" href="/css/media.css" />
+
+<div id="album_form">
+    <form action="/get-album" method="POST">
+        <select name="album_selector" id="album_selector">
+            <option value="spain_summer_2019">Spain, Summer 2019</option>
+            <option value="austin_summer_2019">Austin, Summer 2019</option>
+            <option value="sa_summer_2019">San Antonio, Summer 2019</option>
+        </select>
+        <input id="submit_button" type="submit" value="Submit" />
+    </form>
+</div>
+<div class="video_grid">
+    {{# each videos }}
+        {{# if this.favorite }}
+            <div class="vidDiv favorite">
+                <iframe frameBorder="0" allowfullscreen="allowfullscreen"
+                src={{ this.link }}>
+                </iframe>
+            </div>
+        {{ else }}
+            <div class="vidDiv">
+                <iframe frameBorder="0" allowfullscreen="allowfullscreen"
+                src={{ this.link }}>
+                </iframe>
+            </div>
+        {{/if}}
+    {{/each}}
+</div>
+
+<script>
+    var album = window.location.search.split('=')[1];
+    if (album === undefined) {
+        album = 'spain_summer_2019';
+    }
+    var selectElement = document.getElementById('album_selector');
+    selectElement.value = album;
+</script>
