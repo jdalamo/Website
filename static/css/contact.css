@@ -1,5 +1,5 @@
 body {
-    background: black;
+    background: white;
 }
 
 .grid {
@@ -10,7 +10,7 @@ body {
 
 .content {
     grid-column: 2 / 3;
-    color: white;
+    color: black;
 }
 
 @media screen and (max-width: 1000px) {

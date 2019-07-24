@@ -5,7 +5,7 @@ body {
 .content_grid {
     display: grid;
     padding-top: 76px;
-    grid-template-columns: 50px 1fr 50px;
+    grid-template-columns: 80px 1fr 80px;
 }
 
 .content {
