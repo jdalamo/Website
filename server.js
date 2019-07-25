@@ -41,8 +41,6 @@ app.get('/media', function(req, res) {
     var album = req.query.album;
     if (album === undefined) {
         album = defaultAlbum;
-    } else {
-        album = req.query.album;
     }
     getAlbumLinks(album, function(err, videoLinks) { //Because of scope, must pass a callback function into getAlbum to get result value
         if (err) {
