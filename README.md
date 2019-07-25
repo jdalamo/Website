@@ -24,7 +24,7 @@ I used Node.js for my backend as it's both an industry standard and a great way 
 
 ## HTML
 ---
-I used Handlebars for my HTML templating because I wanted the features of a templating engine while being able to write native HTML.  All the page HTML files are located in the /views/pages/ directory and they extend the base layout (layout.hbs), which can be found in /views/layouts/ directory.
+I used Handlebars for my HTML templating because I wanted the features of a templating engine while being able to write native HTML.  All the page HTML files are located in the /views/pages/ directory and they extend the base layout (layout.hbs), which can be found in the /views/layouts/ directory.
 
 ## CSS
 ---
