@@ -3,6 +3,5 @@ to do:
     - make new query for iPad size screens
     - reset album view counts
     - possibly move to vimeo to get rid of youtube title and stuff
-    - clean up app.use and app.set statements
     - create sequences for primary keys in database
     - once i have a lot of albums, generate the select HTML dynamically with db and handlebars
