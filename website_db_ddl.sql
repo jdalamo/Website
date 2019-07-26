@@ -88,7 +88,7 @@ VALUES
 
 INSERT INTO Videos
 VALUES
-(10, 'Greenbelt Skyline', 'Austin', 'Texas', 'US', '2019-07-05', 'https://www.youtube.com/embed/cPs1QxUADdg?modestbranding=1&loop=1&playlist=cPs1QxUADdg', true, 2);
+(10, 'Greenbelt Skyline', 'Austin', 'Texas', 'US', '2019-07-05', 'https://www.youtube.com/embed/D5H7FkoKuek?modestbranding=1&loop=1&playlist=D5H7FkoKuek', true, 2);
 
 INSERT INTO Videos
 VALUES
