@@ -1,12 +1,12 @@
 -- Tables
 DROP TABLE Videos;
---DROP TABLE Albums;
+DROP TABLE Albums;
 
---CREATE TABLE Albums (
---    album_id     INTEGER         NOT NULL PRIMARY KEY,
---    album_name   VARCHAR(30)     NOT NULL,
---    views        INTEGER         NOT NULL DEFAULT 0
---);
+CREATE TABLE Albums (
+   album_id     INTEGER         NOT NULL PRIMARY KEY,
+   album_name   VARCHAR(30)     NOT NULL,
+   views        INTEGER         NOT NULL DEFAULT 0
+);
 
 CREATE TABLE Videos (
    vid_id       INTEGER         NOT NULL PRIMARY KEY,
@@ -25,28 +25,28 @@ COMMIT;
 
 
 -- Views
---CREATE OR REPLACE VIEW album_view AS
--- SELECT a.album_name, v.link, v.favorite
--- FROM Albums a LEFT JOIN Videos v
--- ON a.album_id = v.album_id;
+CREATE OR REPLACE VIEW album_view AS
+SELECT a.album_name, v.link, v.favorite
+FROM Albums a LEFT JOIN Videos v
+ON a.album_id = v.album_id;
 
--- COMMIT;
+COMMIT;
 
 
 -- Album Inserts
--- INSERT INTO Albums
--- VALUES
--- (1, 'sa_summer_2019', 0);
+INSERT INTO Albums
+VALUES
+(1, 'sa_summer_2019', 0);
 
--- INSERT INTO Albums
--- VALUES
--- (2, 'austin_summer_2019', 0);
+INSERT INTO Albums
+VALUES
+(2, 'austin_summer_2019', 0);
 
--- INSERT INTO Albums
--- VALUES
--- (3, 'spain_summer_2019', 0);
+INSERT INTO Albums
+VALUES
+(3, 'spain_summer_2019', 0);
 
--- COMMIT;
+COMMIT;
 
 
 -- Video Inserts
