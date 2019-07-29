@@ -26,9 +26,9 @@ DB STUFF:
     - https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server
         - have to run that after installing mysql or error will occur
     - path to source:
-        - macOs: /Users/jd/Desktop/website/website_db_ddl.sql
-        - ubuntu: /home/jd/Desktop/website/website_db_ddl.sql
-        - server: /home/ubuntu/website/website_db_ddl.sql
+        - macOs: /Users/jd/Desktop/website_prd/website_db_ddl.sql
+        - ubuntu: /home/jd/Desktop/website_prd/website_db_ddl.sql
+        - server: /home/ubuntu/website_prd/website_db_ddl.sql
 
 
 hard-coded video grid:
