@@ -61,8 +61,12 @@ app.post('/get-album', function(req, res) {
     videoAlbum = req.body.album_selector;
 
     // tracking how many views each album has
-    var updateStmt = "UPDATE Albums SET views = views + 1 WHERE album_name = " + "'" + videoAlbum + "'";
-    dbConn.query(updateStmt, function (err, result, fields) {
+    var updateStmt = "UPDATE Albums SET views = views + 1 WHERE album_name = ?";
+    dbConn.query(updateStmt,
+        [
+            videoAlbum
+        ],
+        function (err, result, fields) {
         if (err) {
             console.log('error updating view count');
         }
@@ -90,8 +94,12 @@ app.listen(3000, function() {
 });
 
 function getAlbumLinks(videoAlbum, callback) { //Because of scope, must pass a callback function into getAlbum to get result value
-    var selectStmt = "SELECT link, favorite FROM album_view WHERE album_name = " + "'" + videoAlbum + "'";
-    dbConn.query(selectStmt, function (err, result, fields) {
+    var selectStmt = "SELECT link, favorite FROM album_view WHERE album_name = ?";
+    dbConn.query(selectStmt,
+        [
+            videoAlbum
+        ],
+        function (err, result, fields) {
         if (err) 
             callback(err, null);
         else
