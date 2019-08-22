@@ -46,7 +46,6 @@ app.get('/media', function(req, res) {
         if (err) {
             console.log('error occurred');  
         } else {
-            console.log(videoLinks);
             res.render('mediaView', {
                 title: 'Media',
                 videos: videoLinks
@@ -57,7 +56,6 @@ app.get('/media', function(req, res) {
 
 // post route for getting video album
 app.post('/get-album', function(req, res) {
-    console.log('got a post request');
     videoAlbum = req.body.album_selector;
 
     // tracking how many views each album has
