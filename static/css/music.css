@@ -7,7 +7,6 @@
 .video_grid {
     display: grid;
     padding: 20px;
-    /* z-index: auto; */
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-auto-rows: auto;
     grid-gap: 20px;
@@ -25,7 +24,7 @@ iframe {
 
 .vidDiv {
     position: relative;
-    padding-top: 56.25%; /* iframes don't care about aspect ratio, so this makes them keep 16:9 */
+    padding-top: 56.25% /* iframes don't care about aspect ration, so this makes them keep 16:9 */
 }
 
 .favorite {

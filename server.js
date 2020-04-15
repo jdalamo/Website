@@ -6,7 +6,8 @@ const mySql = require('mysql');
 
 const app = express();
 
-const defaultAlbum = 'la_winter_2019/2020';
+const defaultDroneAlbum = 'la_winter_2019/2020';
+const defaultMusicAlbum = 'ukulele'
 
 app.use(bodyParser.urlencoded({
     extended: false // in future, should set to true if I want to parse nested POSTs
@@ -40,9 +41,9 @@ app.get('/', function(req, res) {
 app.get('/media', function(req, res) {
     var album = req.query.album;
     if (album === undefined) {
-        album = defaultAlbum;
+        album = defaultDroneAlbum;
     }
-    getAlbumLinks(album, function(err, videoLinks) { //Because of scope, must pass a callback function into getAlbum to get result value
+    getAlbumLinks("drone_ablum_view", album, function(err, videoLinks) { //Because of scope, must pass a callback function into getAlbum to get result value
         if (err) {
             console.log('error occurred');  
         } else {
@@ -54,21 +55,10 @@ app.get('/media', function(req, res) {
     });
 });
 
-// post route for getting video album
-app.post('/get-album', function(req, res) {
+// post route for getting drone video album
+app.post('/get-drone-album', function(req, res) {
     videoAlbum = req.body.album_selector;
 
-    // tracking how many views each album has
-    var updateStmt = "UPDATE Albums SET views = views + 1 WHERE album_name = ?";
-    dbConn.query(updateStmt,
-        [
-            videoAlbum
-        ],
-        function (err, result, fields) {
-        if (err) {
-            console.log('error updating view count');
-        }
-    });
     res.redirect('/media?album=' + videoAlbum);
 });
 
@@ -77,9 +67,29 @@ app.get('/projects', function(req, res) {
     res.render('projectsView', {title: 'Projects'});
 });
 
-// route for blog
-app.get('/blog', function(req, res) {
-    res.render('blogView', {title: 'Blog'});
+// route for music
+app.get('/music', function(req, res) {
+    var album = req.query.album;
+    if (album === undefined) {
+        album = defaultMusicAlbum;
+    }
+    getAlbumLinks("music_album_view", album, function(err, videoLinks) { //Because of scope, must pass a callback function into getAlbum to get result value
+        if (err) {
+            console.log('error occurred');
+        } else {
+            res.render('musicView', {
+                title: 'Music',
+                videos: videoLinks
+            });
+        }
+    });
+});
+
+// post route for getting music video album
+app.post('get-music-album', function(req, res) {
+    videoAlbum = req.body.album_selector;
+
+    res.redirect('/music?album=' + videoAlbum);
 });
 
 // route for contact
@@ -91,8 +101,8 @@ app.listen(3000, function() {
     console.log("listening on port 3000");
 });
 
-function getAlbumLinks(videoAlbum, callback) { //Because of scope, must pass a callback function into getAlbum to get result value
-    var selectStmt = "SELECT link, favorite FROM album_view WHERE album_name = ?";
+function getAlbumLinks(view, videoAlbum, callback) { //Because of scope, must pass a callback function into getAlbum to get result value
+    var selectStmt = "SELECT link, favorite FROM " + view + " WHERE album_name = ?";
     dbConn.query(selectStmt,
         [
             videoAlbum

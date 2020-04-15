@@ -1,7 +1,7 @@
  <link rel="stylesheet" type="text/css" href="/css/media.css" />
 
 <div id="album_form">
-    <form action="/get-album" method="POST">
+    <form action="/get-drone-album" method="POST">
         <select name="album_selector" id="album_selector">
             <option value="la_winter_2019/2020">Los Angeles, Winter 2019/2020</option>
             <option value="spain_summer_2019">Spain, Summer 2019</option>
@@ -11,6 +11,7 @@
         <input id="submit_button" type="submit" value="Submit" />
     </form>
 </div>
+
 <div class="video_grid">
     {{# each videos }}
         {{# if this.favorite }}
