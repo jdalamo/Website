@@ -27,7 +27,7 @@ CREATE TABLE Drone_Videos (
    link         VARCHAR(100)    NOT NULL,
    favorite     BOOLEAN         NOT NULL,
    album_id     INTEGER         NOT NULL,
-   CONSTRAINT   album_fk        FOREIGN KEY     (album_id)     REFERENCES     Drone_Albums     (album_id)
+   CONSTRAINT   d_album_fk      FOREIGN KEY     (album_id)     REFERENCES     Drone_Albums     (album_id)
 );
 
 CREATE TABLE Music_Videos (
@@ -37,7 +37,7 @@ CREATE TABLE Music_Videos (
    link         VARCHAR(60)     NOT NULL,
    favorite     BOOLEAN         NOT NULL,
    album_id     INTEGER         NOT NULL,
-   CONSTRAINT   album_fk        FOREIGN KEY     (album_id)     REFERENCES     Music_Albums     (album_id)
+   CONSTRAINT   m_album_fk      FOREIGN KEY     (album_id)     REFERENCES     Music_Albums     (album_id)
 );
 
 COMMIT;
