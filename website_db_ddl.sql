@@ -176,6 +176,6 @@ COMMIT;
 -- Music Video Inserts
 INSERT INTO Music_Videos
 VALUES
-(1, 'Wish You Were Here', '2020-04-13', 'https://youtu.be/Jz2N8sEZ6J0', true, 1);
+(1, 'Wish You Were Here', '2020-04-13', 'https://www.youtube.com/embed/Jz2N8sEZ6J0', true, 1);
 
 COMMIT;

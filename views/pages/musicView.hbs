@@ -10,7 +10,19 @@
 </div>
 
 <div class="video_grid">
-    <iframe frameBorder="0" allowfullscreen="allowfullscreen"
-        src=https://youtu.be/olKPpL33Yqk>
-    </iframe>
+    {{# each videos }}
+        {{# if this.favorite }}
+            <div class="vidDiv favorite">
+                <iframe frameBorder="0" allowfullscreen="allowfullscreen"
+                    src={{ this.link }}>
+                </iframe>
+            </div>
+        {{ else }}
+            <div class="vidDiv">
+                <iframe frameBorder="0" allowfullscreen="allowfullscreen"
+                    src={{ this.link }}>
+                </iframe>
+            </div>
+        {{/if}}
+    {{/each}}
 </div>
