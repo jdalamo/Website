@@ -3,7 +3,7 @@ const path = require('path');
 const hbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const mySql = require('mysql');
-const frameguard = require('frameguard')
+//const frameguard = require('frameguard');
 
 const app = express();
 
