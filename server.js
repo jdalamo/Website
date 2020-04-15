@@ -32,12 +32,14 @@ app.set('view engine', 'hbs');
 // set static folder
 app.use(express.static(path.join(__dirname, 'static')));
 
-// route for home page
+
+// get route for home page
 app.get('/', function(req, res) {
     res.render('homeView', {title: 'JD del Alamo'});
 });
 
-// route for media
+
+// get route for media
 app.get('/media', function(req, res) {
     var album = req.query.album;
     if (album === undefined) {
@@ -62,12 +64,8 @@ app.post('/get-drone-album', function(req, res) {
     res.redirect('/media?album=' + videoAlbum);
 });
 
-// route for projects
-app.get('/projects', function(req, res) {
-    res.render('projectsView', {title: 'Projects'});
-});
 
-// route for music
+// get route for music
 app.get('/music', function(req, res) {
     var album = req.query.album;
     if (album === undefined) {
@@ -88,18 +86,27 @@ app.get('/music', function(req, res) {
 // post route for getting music video album
 app.post('get-music-album', function(req, res) {
     videoAlbum = req.body.album_selector;
-
+    
     res.redirect('/music?album=' + videoAlbum);
 });
 
-// route for contact
+
+// get route for projects
+app.get('/projects', function(req, res) {
+    res.render('projectsView', {title: 'Projects'});
+});
+
+
+// get route for contact
 app.get('/contact', function(req, res) {
     res.render('contactView', {title: 'Contact'});
 });
 
+
 app.listen(3000, function() {
     console.log("listening on port 3000");
 });
+
 
 function getAlbumLinks(view, videoAlbum, callback) { //Because of scope, must pass a callback function into getAlbum to get result value
     var selectStmt = "SELECT link, favorite FROM " + view + " WHERE album_name = ?";
