@@ -84,7 +84,7 @@ app.get('/music', function(req, res) {
 });
 
 // post route for getting music video album
-app.post('get-music-album', function(req, res) {
+app.post('/get-music-album', function(req, res) {
     videoAlbum = req.body.album_selector;
     
     res.redirect('/music?album=' + videoAlbum);
