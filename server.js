@@ -43,7 +43,7 @@ app.get('/media', function(req, res) {
     if (album === undefined) {
         album = defaultDroneAlbum;
     }
-    getAlbumLinks("drone_ablum_view", album, function(err, videoLinks) { //Because of scope, must pass a callback function into getAlbum to get result value
+    getAlbumLinks("drone_album_view", album, function(err, videoLinks) { //Because of scope, must pass a callback function into getAlbum to get result value
         if (err) {
             console.log('error occurred');  
         } else {
