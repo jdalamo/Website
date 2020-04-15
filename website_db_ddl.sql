@@ -1,3 +1,5 @@
+USE website_db;
+
 -- Tables
 DROP TABLE Drone_Albums;
 DROP TABLE Drone_Videos;
