@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
     extended: false // in future, should set to true if I want to parse nested POSTs
 }));
 
-app.use(frameguard({ action: 'SAMEORIGIN' })) // Prevents the "Blocked by X-Frame-Options Policy" error
+//app.use(frameguard({ action: 'SAMEORIGIN' })) // Prevents the "Blocked by X-Frame-Options Policy" error
 
 const dbConn = mySql.createConnection({
     host: 'localhost',
