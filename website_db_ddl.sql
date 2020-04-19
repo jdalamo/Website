@@ -1,11 +1,11 @@
 USE website_db;
 
 -- Tables
-DROP TABLE Drone_Albums;
 DROP TABLE Drone_Videos;
+DROP TABLE Drone_Albums;
 
-DROP TABLE Music_Albums;
 DROP TABLE Music_Videos;
+DROP TABLE Music_Albums;
 
 CREATE TABLE Drone_Albums (
    album_id     INTEGER         NOT NULL PRIMARY KEY,
