@@ -184,6 +184,6 @@ VALUES
 
 INSERT INTO Music_Videos
 VALUES
-(2, 'The Night King', '2020-04-18', 'https://www.youtube.com/embed/NXsn6w8EVmE', true, 1);
+(2, 'The Night King', '2020-04-18', 'https://www.youtube.com/embed/NXsn6w8EVmE', false, 1);
 
 COMMIT;
