@@ -7,7 +7,7 @@ const mySql = require('mysql');
 const app = express();
 
 const defaultDroneAlbum = 'la_winter_2019/2020';
-const defaultMusicAlbum = 'ukulele'
+const defaultMusicAlbum = 'piano'
 
 app.use(bodyParser.urlencoded({
     extended: false // in future, should set to true if I want to parse nested POSTs

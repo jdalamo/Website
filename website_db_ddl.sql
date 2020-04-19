@@ -80,7 +80,11 @@ COMMIT;
 -- Music Album Inserts
 INSERT INTO Music_Albums
 VALUES
-(1, 'ukulele');
+(1, 'piano');
+
+INSERT INTO Music_Albums
+VALUES
+(2, 'ukulele');
 
 COMMIT;
 
@@ -176,6 +180,10 @@ COMMIT;
 -- Music Video Inserts
 INSERT INTO Music_Videos
 VALUES
-(1, 'Wish You Were Here', '2020-04-13', 'https://www.youtube.com/embed/Jz2N8sEZ6J0', true, 1);
+(1, 'Wish You Were Here', '2020-04-13', 'https://www.youtube.com/embed/Jz2N8sEZ6J0', true, 2);
+
+INSERT INTO Music_Videos
+VALUES
+(2, 'The Night King', '2020-04-18', 'https://www.youtube.com/embed/NXsn6w8EVmE', true, 1);
 
 COMMIT;
