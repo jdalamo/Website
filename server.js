@@ -40,7 +40,7 @@ app.get('/', function(req, res) {
 
 
 // get route for media
-app.get('/media', function(req, res) {
+app.get('/video', function(req, res) {
     var album = req.query.album;
     if (album === undefined) {
         album = defaultDroneAlbum;
@@ -49,8 +49,8 @@ app.get('/media', function(req, res) {
         if (err) {
             console.log('error occurred');  
         } else {
-            res.render('mediaView', {
-                title: 'Media',
+            res.render('videoView', {
+                title: 'Video',
                 videos: videoLinks
             });
         }
@@ -61,7 +61,7 @@ app.get('/media', function(req, res) {
 app.post('/get-drone-album', function(req, res) {
     videoAlbum = req.body.album_selector;
 
-    res.redirect('/media?album=' + videoAlbum);
+    res.redirect('/video?album=' + videoAlbum);
 });
 
 
