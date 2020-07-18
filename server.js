@@ -102,6 +102,10 @@ app.get('/contact', function(req, res) {
     res.render('contactView', {title: 'Contact'});
 });
 
+app.get('/2020', function(req, res) {
+    res.render('2020View', {title: '2020'})
+})
+
 
 app.listen(3000, function() {
     console.log("listening on port 3000");
