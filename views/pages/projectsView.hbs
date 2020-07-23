@@ -11,9 +11,9 @@
             Raspberry Pi and works completely wirelessly.  Pictures can be emailed to the device at an email specified by the user
             and the device automatically downloads them and adds them to the slideshow.  In order to make the project more interesting,
             I developed a RESTful API to run on the Raspberry Pi to allow control of it wirelessly.  Then finally I developed an iOS app
-            to interface with the api and control the Raspberry Pi.  App functionality includes changing modes between slideshow and single
+            to interface with the API and control the Raspberry Pi.  App functionality includes changing modes between slideshow and single
             photo mode, where the user can select which photo is displayed; updating the device name and the email it looks for new pictures at;
-            viewing the pictures saved to the device as well as the ability to delete them from the devive, and also a view of the log saved
+            viewing the pictures saved to the device as well as the ability to delete them from the devive; and also a view of the log saved
             on the device.
         </p>
         <p>
@@ -30,7 +30,39 @@
 
         <hr>
 
+        <h1 class="title"><a href="https://github.com/jdalamo/Google-Drive-CLI" target="_blank", rel="noopener"><u>Google Drive CLI</u></a></h1>
+        <p>
+            Technologies used: Python, Google Drive API
+        </p>
+        <p>
+            I primarily use Google Drive to save all of my school work, as it makes it easy to access all my files from anywhere, across
+            multiple devices--that is, when I remember to upload them.  The first iteration of this project was my wanting something I
+            could schedule to run every few minutes to upload anything I had forgotten about to Google.  In my head it would work 
+            like this: I'd give it both the path of the directory on my machine that I want synced with Google Drive, as well as the folder
+            ID of the Google Drive folder with which I want it to be synced.  Then each time it runs, it looks at both, determines what's different,
+            and syncs the two folders.  The hardest part of this project was developing the algorithm that recursively looks through the Google
+            Drive file system.  I was expecting Google Drive to be structured similarly to a normal file system, but it's not.  Google Drive
+            uses IDs, not filepaths.  Every folder and file has an ID and stores the ID of its parent as well.  To traverse the file structure,
+            I had to write an algorithm that takes a starting parent ID representing the folder to be synced (provided by the user), and then
+            iterates through all the children.  Each child is analyzed and if it is another folder it is added to a list of folders, which are
+            then subsequently iterated through.  To help me design this algorithm I looked into the source code for the os.walk() function within
+            Python's os module.  Once I had the algorithm working, it was simple enough to modify it to work on a traditional file structure as well.
+            Once it was working for both platforms, all that was left to do was compare the results of both runs, and either upload or download the
+            dissimilar files.
+        </p>
+        <p>
+            After this proof of concept, I started to think about adding flexibility.  I decided to create a Google Drive command-line interface,
+            which can be used to navigate Google Drive within your terminal as if it was a directory on your computer.  You can use the popular
+            Bash commands like pwd, ls, cd, and clear as well as custom ones that have functions specific to Google Drive.  Tracked folders can also
+            be set up to make it easy to keep a local folder in sync with a Google Drive folder.
+        </p>
+
+        <hr>
+        
         <h1 class="title"><a href="https://github.com/jdalamo/Website" target="_blank", rel="noopener"><u>This website</u></a></h1>
+        <p>
+            Technologies used: Node.js, HTML, CSS, MySQL
+        </p>
         <p>
             Before building this website I had no experience with JavaScript, HTML, or CSS.  Part of my motivation
             to build it was learning these technologies, which is the reason I chose Node.js for my backend instead
@@ -66,6 +98,9 @@
 
         <h1 class="title"><a href="https://github.com/jdalamo/K-Project" target="_blank", rel="noopener"><u>MIS 333K Final Project</u></a></h1>
         <p>
+            Technologies used: C#/MVC, Azure SQL Database, HTML, Bootstrap
+        </p>
+        <p>
             This was the final project for my MIS 333K class on C# and MVC.  For it, my team and I had to create a banking web app where
             users could login; open various types of accounts including checkings, savings, stock portfolios, and IRA accounts; and manage
             their money by depositing, withdrawing, transferring, or using existing balances to buy stock.  The joke about this class is that
@@ -76,33 +111,11 @@
 
         <hr>
 
-        <h1 class="title"><a href="https://github.com/jdalamo/Google-Drive-CLI" target="_blank", rel="noopener"><u>Google Drive CLI</u></a></h1>
-        <p>
-            I primarily use Google Drive to save all of my school work, as it makes it easy to access all my files from anywhere, across
-            multiple devices--that is, when I remember to upload them.  The first iteration of this project was my wanting something I
-            could schedule to run every few minutes to upload anything I had forgotten about to Google.  In my head it would work 
-            like this: I'd give it both the path of the directory on my machine that I want synced with Google Drive, as well as the folder
-            ID of the Google Drive folder with which I want it to be synced.  Then each time it runs, it looks at both, determines what's different,
-            and syncs the two folders.  The hardest part of this project was developing the algorithm that recursively looks through the Google
-            Drive file system.  I was expecting Google Drive to be structured similarly to a normal file system, but it's not.  Google Drive
-            uses IDs, not filepaths.  Every folder and file has an ID and stores the ID of its parent as well.  To traverse the file structure,
-            I had to write an algorithm that takes a starting parent ID representing the folder to be synced (provided by the user), and then
-            iterates through all the children.  Each child is analyzed and if it is another folder it is added to a list of folders, which are
-            then subsequently iterated through.  To help me design this algorithm I looked into the source code for the os.walk() function within
-            Python's os module.  Once I had the algorithm working, it was simple enough to modify it to work on a traditional file structure as well.
-            Once it was working for both platforms, all that was left to do was compare the results of both runs, and either upload or download the
-            dissimilar files.
-        </p>
-        <p>
-            After this proof of concept, I started to think about adding flexibility.  I decided to create a Google Drive command-line interface,
-            which can be used to navigate Google Drive within your terminal as if it was a directory on your computer.  You can use the popular
-            Bash commands like pwd, ls, cd, and clear as well as custom ones that have functions specific to Google Drive.  Tracked folders can also
-            be set up to make it easy to keep a local folder in sync with a Google Drive folder.
-        </p>
-
-        <hr>
 
         <h1 class="title"><a href="https://github.com/jdalamo/Yahoo-Finance-ETL" target="_blank", rel="noopener"><u>Yahoo Finance ETL</u></a></h1>
+        <p>
+            Technologies used: C#, SQL
+        </p>
         <p>
             I wrote this script during my internship at Valero during the summer of 2019.  The purpose of it is to automate the monthly
             procedure of downloading the past month's stock price data from Yahoo Finance and uploading it to a local Oracle database.
