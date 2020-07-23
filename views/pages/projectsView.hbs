@@ -2,9 +2,37 @@
 
 <div class="content_grid">
     <div class="content">
+        <h1 class="title"><a href="https://github.com/jdalamo/TVFrame" target="_blank", rel="noopener"><u>TVFrame</u></a></h1>
+        <p>
+            Technologies used: Python, Swift, Gmail API
+        </p>
+        <p>
+            TVFrame is a project that emulates what a "smart" picture frame does but on any display.  It's meant to be run on a
+            Raspberry Pi and works completely wirelessly.  Pictures can be emailed to the device at an email specified by the user
+            and the device automatically downloads them and adds them to the slideshow.  In order to make the project more interesting,
+            I developed a RESTful API to run on the Raspberry Pi to allow control of it wirelessly.  Then finally I developed an iOS app
+            to interface with the api and control the Raspberry Pi.  App functionality includes changing modes between slideshow and single
+            photo mode, where the user can select which photo is displayed; updating the device name and the email it looks for new pictures at;
+            viewing the pictures saved to the device as well as the ability to delete them from the devive, and also a view of the log saved
+            on the device.
+        </p>
+        <p>
+            Challenges: The first challenge I encountered with this project was refamiliarizing myself with Xcode and Swift.  I took an iOS
+            development course through CodePath at UT my sophomore year but didn't remember much about the language other than Swift optionals
+            were my worst enemy.  After a day of Googling and YouTubing though I got comfortable enough to have the settings page of my app laid
+            out.  Then all I had to do was submit a GET request to my API and I'd have all my settings data to populate my text fields, or so I
+            thought.  It took me a full day to figure out how to save the results of an HTTP request in Swift.  I wasn't familiar with function
+            closures in Swift and so anytime I debugged my app I could see that I was getting the data but I couldn't figure out how to assign that
+            data to my instance variable I was trying to use.  I finally found a YouTube tutorial on it and got that part working, only to be stumped
+            a day later by asynchronous GET requests not populating my data models for my table views.  After finally figuring that out it was relatively
+            smooth sailing to finish up the app.
+        </p>
+
+        <hr>
+
         <h1 class="title"><a href="https://github.com/jdalamo/Website" target="_blank", rel="noopener"><u>This website</u></a></h1>
         <p>
-            Before building this website I had no experience in JavaScript, HTML, or CSS.  Part of my motivation
+            Before building this website I had no experience with JavaScript, HTML, or CSS.  Part of my motivation
             to build it was learning these technologies, which is the reason I chose Node.js for my backend instead
             of a Python framework like Django or Flask, which would've been more comfortable for me.  This was also my
             first time using Git, which comes with its own learning curve.  The first step in this project was figuring
