@@ -8,13 +8,12 @@
         </p>
         <p>
             TVFrame is a project that emulates what a "smart" picture frame does but on any display.  It's meant to be run on a
-            Raspberry Pi and works completely wirelessly.  Pictures can be emailed to the device at an email specified by the user
+            Raspberry Pi and works completely wirelessly.  Pictures can be emailed to the Pi at a Gmail account specified by the user
             and the device automatically downloads them and adds them to the slideshow.  In order to make the project more interesting,
             I developed a RESTful API to run on the Raspberry Pi to allow control of it wirelessly.  Then finally I developed an iOS app
-            to interface with the API and control the Raspberry Pi.  App functionality includes changing modes between slideshow and single
-            photo mode, where the user can select which photo is displayed; updating the device name and the email it looks for new pictures at;
-            viewing the pictures saved to the device as well as the ability to delete them from the devive; and also a view of the log saved
-            on the device.
+            to interface with the API and control the Pi.  App functionality includes changing modes between slideshow and single
+            photo mode, where the user can select which photo is displayed; updating the device name; viewing the pictures saved to the device
+            as well as the ability to delete them from the devive; and also viewing the device's activity log.
         </p>
         <p>
             Challenges: The first challenge I encountered with this project was refamiliarizing myself with Xcode and Swift.  I took an iOS
@@ -26,6 +25,14 @@
             data to my instance variable I was trying to use.  I finally found a YouTube tutorial on it and got that part working, only to be stumped
             a day later by asynchronous GET requests not populating my data models for my table views.  After finally figuring that out it was relatively
             smooth sailing to finish up the app.
+        </p>
+        <p>
+            Future features I hope to add:
+            <ul>
+                <li>The ability for the app to scan the network to find my API, without the user having to input the IP address that the server is running on</li>
+                <li>The ability for users to rename pictures saved on the Pi and download them to their iOS device</li>
+                <li>The ability to create playlists of pictures and allow the user to select one to be played back on the TV</li>
+            </ul>
         </p>
 
         <hr>
@@ -58,7 +65,7 @@
         </p>
 
         <hr>
-        
+
         <h1 class="title"><a href="https://github.com/jdalamo/Website" target="_blank", rel="noopener"><u>This website</u></a></h1>
         <p>
             Technologies used: Node.js, HTML, CSS, MySQL
