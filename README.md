@@ -1,22 +1,14 @@
-## My personal website
----
-This is the code for my website, which can be found [here](https://jdalamo.com).
+# Personal Portfolio Website
 
-## Get it running
+## About
 ---
-1. Clone the directory onto your machine
-2. Install Node.js, npm, and MySQL
-3. In a terminal window, navigate to that directory and run the following commands:
-```
-> npm install
-> mysql -u root -p
-mysql> CREATE DATABASE website_db;
-mysql> USE website_db
-mysql> SOURCE {path_to_website_db_ddl.sql on your machine}
-mysql> quit
-> node server.js
-```
-Note: you will have to modify the server.js file to use your password you set for MySQL.
+The code for my website, which can be found [here](https://jdalamo.com).
+
+## Stack
+---
+- Node.js
+- Express
+- MySQL
 
 ## Backend
 ---
