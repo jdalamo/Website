@@ -53,7 +53,6 @@ html {
     animation-name: scroll_button;
     animation-duration: .75s;
     animation-iteration-count: 5;
-    /* animation-direction: alternate; */
     animation-fill-mode: forwards;
 }
 
@@ -70,10 +69,6 @@ html {
 
 a {
     color: white;
-}
-
-#talking {
-    /* font-style: italic; */
 }
 
 @keyframes scroll_button {
