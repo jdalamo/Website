@@ -1,4 +1,8 @@
-.image_grid {
+html {
+    scroll-behavior: smooth;
+}
+
+#image_grid {
     background-image: url('/images/background.jpg');
     background-size: cover;
     background-position: center top;
@@ -11,21 +15,21 @@
     ". f"
     ". l"
     ". s"
-    ". .";
+    ". b";
 }
 
-#firstName {
+#first_name {
     padding-left: 7px;
     grid-area: f;
     align-self: center;
 }
 
-#lastName {
+#last_name {
     grid-area: l;
     align-self: center;
 }
 
-.myName {
+.my_name {
     color: white;
     font-size: 60px;
 }
@@ -40,7 +44,20 @@
     display: inline;
 }
 
-.content_grid {
+#scroll_button {
+    grid-area: b;
+    color: white;
+    font-size: 60px;
+    padding-top: 40%;
+    padding-left: 46%;
+    animation-name: scroll_button;
+    animation-duration: .75s;
+    animation-iteration-count: 5;
+    /* animation-direction: alternate; */
+    animation-fill-mode: forwards;
+}
+
+#content_grid {
     display: grid;
     grid-template-columns: 50px 1fr 50px;
     background: black;
@@ -56,7 +73,12 @@ a {
 }
 
 #talking {
-    font-style: italic;
+    /* font-style: italic; */
+}
+
+@keyframes scroll_button {
+    from {padding-top: 41%}
+    to {padding-top: 43%}
 }
 
 @media screen and (max-width: 1000px) {
@@ -67,7 +89,7 @@ a {
     .content {
         font-size: 50px;
     }
-    .myName {
+    .my_name {
         font-size: 100px;
     }
     #sm_links i {
