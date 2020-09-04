@@ -65,11 +65,6 @@ app.post('/get-drone-album', function(req, res) {
 });
 
 
-app.get('/spranks2020sblock', function(req, res) {
-    res.redirect('https://i.redd.it/lotu27arh0h21.jpg')
-});
-
-
 // get route for music
 app.get('/music', function(req, res) {
     var album = req.query.album;
